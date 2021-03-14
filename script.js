@@ -120,7 +120,7 @@ function artistLook(clicked_id) {
     document.getElementById("artist-look").innerHTML = '<i onclick="past_result()" class="fas fa-arrow-left" title="戻る" style="margin-left: 10px;margin-top: 10px;float: left;font-size: 20px;color: white;"></i><div id="artist-inner"></div>';
 
     if (clicked_id == '00001') {
-        document.getElementById("artist-inner").innerHTML = ''
+        document.getElementById("artist-inner").innerHTML = '<div style="width: 100%;height: 370px;"><img src="https://e-cdns-images.dzcdn.net/images/artist/f4daf253b92a1a9646844c5162e2a968/300x300.jpg" style="width: 100%;height: 370px;"><h1 style="color: white;text-align: center;margin-top: -150px;font-size: 40px;font-family:"MS Pゴシック",sans-serif;">Ed Sheeran</h1><p style="text-align: center;"><input type="button" style="margin-top: -10px;" title="search" value="フォロー" id="library-btn"></p></div><div style="margin-top: 15px;"><h3 style="margin-left: 10px;">人気曲</h3></div>'
     }
 }
 
