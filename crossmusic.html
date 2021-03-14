@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crossmusic</title>
+    <link rel="shortcut icon" href="crossmusic icon.png">
+    <script src="https://kit.fontawesome.com/dac92b92d5.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js" 
+    integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" 
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.min.css">
+</head>
+<body oncopy="return false;">
+    <div id="home">
+        <div id="top">
+        <div class="swiper-container" style="width: 100%;height: 250px;">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="top1.png" style="width: 100%;height: 250px;"></div>
+                <div class="swiper-slide"><img src="top2.png" style="width: 100%;height: 250px;"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+        </div>
+        <div id="main">
+            <div id="songs">
+                <h2>人気の曲</h2>
+                <div class="wrapper">
+                    <div class="item" id="1193701392" onclick="view(this.id)"><img style="height: 190px;width: 190px;" src="https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/ef/ca/a4/efcaa44a-517a-98e3-2353-5bff15471ed5/source/190x190bb.jpg"><h4 style="margin-top: 5px;">Shape of you</h4><h4 style="margin-top: -20px;color: rgb(105, 105, 105);">-Ed Sheeran</h4></div>
+                    <div class="item" id="1492963535" onclick="view(this.id)"><img style="height: 190px;width: 190px;" src="https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/96/53/3b/96533b35-ec84-3445-cfb7-bcd914985eb9/source/190x190bb.jpg"><h4 style="margin-top: 5px;">I LOVE...</h4><h4 style="margin-top: -20px;color: rgb(105, 105, 105);">-Official髭男dism</h4></div>
+                    <div class="item" id="542625586" onclick="view(this.id)"><img style="height: 190px;width: 190px;" src="https://is1-ssl.mzstatic.com/image/thumb/Music/v4/33/5f/6c/335f6cb3-a9f4-fdc4-f8dd-eabd15bb29a3/source/190x190bb.jpg"><h4 style="margin-top: 5px;">What makes beautiful</h4><h4 style="margin-top: -20px;color: rgb(105, 105, 105);">-One Direction</h4></div>
+                    <div class="item" id="1542182311" onclick="view(this.id)"><img style="height: 190px;width: 190px;" src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/43/17/f1/4317f1d4-6ce4-b675-0b1a-7f2edd2bb40b/source/190x190bb.jpg"><h4 style="margin-top: 5px;">アンコール</h4><h4 style="margin-top: -20px;color: rgb(105, 105, 105);">-YOASOBI</h4></div>
+                    <div class="item" id="1528831888" onclick="view(this.id)"><img style="height: 190px;width: 190px;" src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/b5/56/a8/b556a854-a0ca-1803-2e88-3acb622828ae/source/190x190bb.jpg"><h4 style="margin-top: 5px;">Dynamite</h4><h4 style="margin-top: -20px;color: rgb(105, 105, 105);">-BTS</h4></div>
+                </div>
+            </div>
+            <div id="videos">
+                <h2>人気の動画</h2>
+                <div class="wrapper">
+                    <div class="item" onclick="viewVideo(this.id)" id="Qp3b-RXtz4w"><img style="height: 190px;width: 290px;" src="https://i.ytimg.com/vi/Qp3b-RXtz4w/mqdefault.jpg"><h4 style="margin-top: 5px;">うっせぇわ</h4><h4 style="margin-top: -20px;color: rgb(105, 105, 105);">-Ado</h4></div>
+                    <div class="item" onclick="viewVideo(this.id)" id="BflFNMl_UWY"><img style="height: 190px;width: 290px;" src="https://i.ytimg.com/vi/BflFNMl_UWY/hqdefault.jpg"><h4 style="margin-top: 5px;">Dynamite</h4><h4 style="margin-top: -20px;color: rgb(105, 105, 105);">-BTS</h4></div>
+                    <div class="item" onclick="viewVideo(this.id)" id="vcGbefQBvJ4"><img style="height: 190px;width: 290px;" src="https://i.ytimg.com/vi/vcGbefQBvJ4/mqdefault.jpg"><h4 style="margin-top: 5px;">アンコール</h4><h4 style="margin-top: -20px;color: rgb(105, 105, 105);">-YOASOBI</h4></div>
+                    <div class="item" onclick="viewVideo(this.id)" id="X-YtmD0YsBA"><img style="height: 190px;width: 290px;" src="https://i.ytimg.com/vi/X-YtmD0YsBA/mqdefault.jpg"><h4 style="margin-top: 5px;">ドライフラワー</h4><h4 style="margin-top: -20px;color: rgb(105, 105, 105);">-優里</h4></div>
+                    <div class="item" onclick="viewVideo(this.id)" id="iqEr3P78fz8"><img style="height: 190px;width: 290px;" src="https://i.ytimg.com/vi/iqEr3P78fz8/mqdefault.jpg"><h4 style="margin-top: 5px;">水平線</h4><h4 style="margin-top: -20px;color: rgb(105, 105, 105);">-back number</h4></div>
+                </div>
+            </div>
+            <div id="playlist">
+                <h2>人気のプレイリスト</h2>
+                <div class="wrapper">
+                    <div class="item"><img style="height: 190px;width: 250px;" src="playlist1.png"><h4 style="margin-top: 5px;">2020年　ヒット曲</h4><h4 style="margin-top: -20px;color: rgb(105, 105, 105);">-Crossmusic</h4></div>
+                    <div class="item"><img style="height: 190px;width: 250px;" src="yougakuplaylist.png"><h4 style="margin-top: 5px;">洋楽　ヒット曲</h4><h4 style="margin-top: -20px;color: rgb(105, 105, 105);">-Crossmusic</h4></div>
+                    <div class="item"><img style="height: 190px;width: 250px;" src="relaxplaylist.jpg"><h4 style="margin-top: 5px;">リラックス</h4><h4 style="margin-top: -20px;color: rgb(105, 105, 105);">-Crossmusic</h4></div>
+                    <div class="item"><img style="height: 190px;width: 250px;" src=""><h4 style="margin-top: 5px;">K-POP　HIT</h4><h4 style="margin-top: -20px;color: rgb(105, 105, 105);">-Crossmusic</h4></div>
+                    <div class="item"><img style="height: 190px;width: 250px;" src=""><h4 style="margin-top: 5px;">春のソング</h4><h4 style="margin-top: -20px;color: rgb(105, 105, 105);">-Crossmusic</h4></div>
+                </div>
+            </div>
+            <div id="artist">
+                <h2>人気のアーティスト</h2>
+                <div class="wrapper">
+                    <div class="item" id="00001" onclick="artistLook(this.id)"><img style="height: 200px;width: 200px;border-radius: 100px;" src="https://e-cdns-images.dzcdn.net/images/artist/f4daf253b92a1a9646844c5162e2a968/300x300.jpg"><h4 style="margin-top: 5px;">Ed Sheeran</h4></div>
+                    <div class="item"><img style="height: 200px;width: 200px;border-radius: 100px;" src="https://pbs.twimg.com/profile_images/1192953833011339266/EOyF-epb_400x400.jpg"><h4 style="margin-top: 5px;">YOASOBI</h4></div>
+                    <div class="item"><img style="height: 200px;width: 200px;border-radius: 100px;" src="https://pbs.twimg.com/profile_images/1345808029116108800/ZWLT25o9.jpg"><h4 style="margin-top: 5px;">菅田将暉</h4></div>
+                    <div class="item"><img style="height: 200px;width: 200px;border-radius: 100px;" src="http://www.hanpen-blog.com/wp-content/uploads/2018/04/20180415003344-1.jpg"><h4 style="margin-top: 5px;">Maroon5</h4></div>
+                    <div class="item"><img style="height: 200px;width: 200px;border-radius: 100px;" src="https://2xmlabs.com/wp-content/uploads/2018/03/5hbCvODm_400x400.jpg"><h4 style="margin-top: 5px;">星野源</h4></div>
+                </div>
+            </div>
+            <div id="favorite">
+                <h2>あなたのお気に入り</h2>
+                <br>
+                <p style="color: white;text-align: center;">音楽を聴けば聞くほど、あなたの好みに近づきます。</p>
+                <p style="text-align: center;"><input type="button" title="search" value="音楽を探す" onclick="search()" id="library-btn"></p>
+            </div>
+        </div>
+    </div>
+    <div id="look"></div>
+    <div id="artist-look"></div>
+    <div id="related"></div>
+    <div id="lyric"></div>
+    <div id="search">
+        <div id="question">
+        <h2 style="margin-left: 10px;margin-top: 20px;">search</h2>
+        <div id="search-form">
+            <input title="検索" type="search" id="search-btn" spellcheck="false" autocorrect="on" autocapitalize="on" placeholder="曲の検索...">   
+        </div>
+        <div id="search-kind">
+            <div id="j-pop">
+                <img src="https://cdn.sanity.io/images/e87uzlo8/production/00eecc8e70011d3c86f7a01c773b371963d2867f-1000x667.jpg?w=1200&fm=jpg&q=80" style="width: 100%;height: 150px;border-radius: 5px;opacity: 0.3;">
+                <h2 style="opacity: 1.0;margin-top: -150px;margin-left: 5px;">J-POP</h2>
+            </div>
+            <div id="k-pop">
+                <img src="https://www.lawson.co.jp/lab/campaign/niziu/img/nzu_main4.jpg" style="width: 100%;height: 150px;border-radius: 5px;opacity: 0.3;">
+                <h2 style="opacity: 1.0;margin-top: -150px;margin-left: 5px;">K-POP</h2>
+            </div>
+            <div id="relax">
+                <img src="https://aim-universe.co.jp/andresortlife/wp-content/uploads/2020/07/0-4.jpg" style="width: 100%;height: 150px;border-radius: 5px;opacity: 0.3;">
+                <h2 style="opacity: 1.0;margin-top: -150px;margin-left: 5px;">リラックス</h2>
+            </div>
+            <div id="u-pop">
+                <img src="http://blog-imgs-103.fc2.com/m/u/s/musicaholicoversea/ed1.jpg" style="width: 100%;height: 150px;border-radius: 5px;opacity: 0.3;">
+                <h2 style="opacity: 1.0;margin-top: -150px;margin-left: 5px;">洋楽</h2>
+            </div>
+            <div id="spring">
+                <img src="https://www.jalan.net/news/img/2018/01/1802_kanto_center_030-670x443.jpg" style="width: 100%;height: 150px;border-radius: 5px;opacity: 0.3;">
+                <h2 style="opacity: 1.0;margin-top: -150px;margin-left: 5px;">春</h2>
+            </div>
+            <div id="ranking">
+                <img src="https://higedan.com/wp-content/themes/higedan_renewal2020_cms/img/artist-photo-20210101.jpeg" style="width: 100%;height: 150px;border-radius: 5px;opacity: 0.3;">
+                <h2 style="opacity: 1.0;margin-top: -150px;margin-left: 5px;">チャート</h2>
+            </div>
+        </div>
+        </div>
+        <div id="result">
+            <div id="searchFocus">
+                <input title="検索" type="search" id="searchFocus2" spellcheck="false" autocorrect="on" autocapitalize="on" placeholder="曲の検索...">   
+            </div>
+            <div id="result1"></div>
+            <div id="result2"></div>
+        </div>
+    </div>
+    <div id="library">
+        <h2 style="margin-left: 10px;margin-top: 20px;">library</h2>
+        <p style="text-align: center;margin-top: 70px;">プレミアムに入ると、プレイリストを作成できます。</p>
+        <p style="text-align: center;"><input type="button" title="プレミアム" value="プレミアムへ" id="library-btn"></p>
+        <img src="playlist1.svg"  style="width: 86%;margin-left: 7%;height: 350px;margin-top: 40px;">
+    </div>
+    <div id="premium">
+        <h2 style="margin-left: 10px;margin-top: 20px;">premium</h2>
+        <h3 style="margin-top: 40px;text-align: center;">今なら、プレミアムが一か月間無料。</h3>
+        <div id="premium-mode">
+            <h2 style="color: white;margin-left: 30px;">プレミアムプラン</h2>
+            <h3 style="color: white;margin-top: 40px;margin-left: 30px;">プレイリストの作成：　可能</h3>
+            <h3 style="color: white;margin-top: 30px;margin-left: 30px;">フル再生：　可能</h3>
+            <h3 style="color: white;margin-top: 30px;margin-left: 30px;">音楽情報の取得：　可能</h3>
+            <h3 style="color: white;margin-top: 30px;margin-left: 30px;">カラオケ機能：　可能</h3>
+            <h3 style="color: white;margin-top: 30px;margin-left: 30px;">月額：　980円</h3>
+        </div>
+        <p style="text-align: center;"><input type="button" title="プレミアム" value="プレミアムへ" id="library-btn"></p>
+    </div>
+    <div id="menu">
+        <div id="item1" class="ripple" onclick="home()">
+            <span class="ripple__effect is-black"></span>
+            <p id="p"><i class="fas fa-home" id="i"></i></p>
+            <p id="p" style="color: white;font-size: 12px;" class="p">home</p>
+        </div>
+        <div id="item2" class="ripple" onclick="search()">
+            <span class="ripple__effect is-black" onclick="search()"></span>
+            <p id="p"><i class="fas fa-search" id="i"></i></p>
+            <p id="p" style="color: white;font-size: 12px;" class="p">search</p>
+        </div>
+        <div id="item3" class="ripple" onclick="library()">
+            <span class="ripple__effect is-black"></span>
+            <p id="p"><i class="fas fa-compact-disc" id="i"></i></p>
+            <p id="p" style="color: white;font-size: 12px;" class="p">library</p>
+        </div>
+        <div id="item4" class="ripple" onclick="premium()">
+            <span class="ripple__effect is-blue"></span>
+            <p id="p"><i class="fas fa-user" id="i" style="color: #419be0;"></i></p>
+            <p id="p" style="color: #419be0;font-size: 12px;" class="p">premium</p>
+        </div>
+    </div>
+    <div id="errorbox" style="position: fixed;top: 600px;left: 2%;background: rgb(65, 65, 65);width: 96%;height: 50px;z-index: 20;display: none;">
+        <p style="color: white;text-align: center;">プレミアムに入ると、お気に入りにできます。</p>
+    </div>
+    <div id="preview-box" style="position: fixed;top: 30%;left: 0%;background: rgb(65, 65, 65);width: 100%;height: 70%;z-index: 18;display: none;transition: 0.5s;overflow-y: scroll;">
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+    <script>
+        var mySwiper = new Swiper ('.swiper-container', {
+            loop: true,
+            slidesPerView: 2,
+            spaceBetween: 10,
+            centeredSlides : true,
+            pagination: '.swiper-pagination',
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+            breakpoints: {
+            767: {
+                slidesPerView: 1,
+                spaceBetween: 0
+            }
+            }
+        })
+    </script>
+</body>
+</html>
