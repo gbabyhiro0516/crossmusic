@@ -117,11 +117,77 @@ function artistLook(clicked_id) {
     document.getElementById("result2").style.display = "none";
     document.getElementById("result1").style.display = "none";
     document.getElementById("artist-look").style.display = "block";
-    document.getElementById("artist-look").innerHTML = '<i onclick="past_result()" class="fas fa-arrow-left" title="戻る" style="margin-left: 10px;margin-top: 10px;float: left;font-size: 20px;color: white;"></i><div id="artist-inner"></div>';
+    document.getElementById("artist-look").innerHTML = '<i onclick="home()" class="fas fa-arrow-left" title="戻る" style="position: absolute;left: 10px;top: 10px;font-size: 20px;color: #419be0"></i><div id="artist-inner"></div>';
 
     if (clicked_id == '00001') {
-        document.getElementById("artist-inner").innerHTML = '<div style="width: 100%;height: 370px;"><img src="https://e-cdns-images.dzcdn.net/images/artist/f4daf253b92a1a9646844c5162e2a968/300x300.jpg" style="width: 100%;height: 370px;"><h1 style="color: white;text-align: center;margin-top: -150px;font-size: 40px;font-family:"MS Pゴシック",sans-serif;">Ed Sheeran</h1><p style="text-align: center;"><input type="button" style="margin-top: -10px;" title="search" value="フォロー" id="library-btn"></p></div><div style="margin-top: 15px;"><h3 style="margin-left: 10px;">人気曲</h3></div>'
+        document.getElementById("artist-inner").innerHTML = '<div style="width: 100%;height: 380px;"><img src="https://e-cdns-images.dzcdn.net/images/artist/f4daf253b92a1a9646844c5162e2a968/300x300.jpg" style="width: 100%;height: 380px;"><h1 style="color: white;text-align: center;margin-top: -150px;font-size: 40px;font-family:"MS Pゴシック",sans-serif;">Ed Sheeran</h1><p style="text-align: center;"><input type="button" style="margin-top: -10px;" title="search" value="フォロー" id="library-btn"></p></div><div style="margin-top: 40px;"><h3 style="margin-left: 2%;">人気曲</h3><div style="margin-left: 10px;margin-top: -25px;" id="result1-artist"></div><div style="margin-left: 10px;margin-top: 10px;width: 96%;"><h3>Ed Sheeranとは</h3><p>Ed Sheeranは、イギリスのシンガーソングライターです。ルーパーとアコースティックギターを用いる演奏を得意とし、多くの人を魅了しました。代表曲は、Shape of youです。</p></div><br><br><br></div>';
+
+        searchWordArtist({term: 'Ed Sheeran',limit: 7});
+    }if (clicked_id == '00002') {
+        document.getElementById("artist-inner").innerHTML = '<div style="width: 100%;height: 370px;"><img src="https://pbs.twimg.com/profile_images/1192953833011339266/EOyF-epb_400x400.jpg" style="width: 100%;height: 370px;"><h1 style="color: white;text-align: center;margin-top: -150px;font-size: 40px;font-family:"MS Pゴシック",sans-serif;">YOASOBI</h1><p style="text-align: center;"><input type="button" style="margin-top: -10px;" title="search" value="フォロー" id="library-btn"></p></div><div style="margin-top: 15px;"><h3 style="margin-left: 40px;">人気曲</h3><div style="margin-left: 10px;margin-top: -25px;" id="result1-artist"></div><div style="margin-left: 10px;margin-top: 10px;width: 96%;"><h3>YOASOBIとは</h3><p>YOASOBIは、Ayuseとikuraこと幾多りらによる音楽ユニットです。小説を音楽にするという新しい曲の作り方で多くの人の支持を集めています。代表曲は、夜に駆けるです。</p></div><br><br><br></div>';
+
+        searchWordArtist({term: 'YOASOBI',limit: 7});
+    }if (clicked_id == '00003') {
+        document.getElementById("artist-inner").innerHTML = '<div style="width: 100%;height: 380px;"><img src="https://pbs.twimg.com/profile_images/1345808029116108800/ZWLT25o9.jpg" style="width: 100%;height: 380px;"><h1 style="color: white;text-align: center;margin-top: -150px;font-size: 40px;font-family:"MS Pゴシック",sans-serif;">菅田将暉</h1><p style="text-align: center;"><input type="button" style="margin-top: -10px;" title="search" value="フォロー" id="library-btn"></p></div><div style="margin-top: 40px;"><h3 style="margin-left: 10px;">人気曲</h3><div style="margin-left: 10px;margin-top: -25px;" id="result1-artist"></div><div style="margin-left: 10px;margin-top: 10px;width: 96%;"><h3>菅田将暉とは</h3><p>菅田将暉は、日本の歌手です。「まちがいさがし」や「星を仰ぐ」などのヒット曲を出しました。代表曲は、さよならエレジーです。</p></div><br><br><br></div>';
+
+        searchWordArtist({term: '菅田将暉',limit: 7});
+    }if (clicked_id == '00004') {
+        document.getElementById("artist-inner").innerHTML = '<div style="width: 100%;height: 370px;"><img src="http://www.hanpen-blog.com/wp-content/uploads/2018/04/20180415003344-1.jpg" style="width: 100%;height: 370px;"><h1 style="color: white;text-align: center;margin-top: -150px;font-size: 40px;font-family:"MS Pゴシック",sans-serif;">Maroon5</h1><p style="text-align: center;"><input type="button" style="margin-top: -10px;" title="search" value="フォロー" id="library-btn"></p></div><div style="margin-top: 40px;"><h3 style="margin-left: 10px;">人気曲</h3><div style="margin-left: 10px;margin-top: -25px;" id="result1-artist"></div><div style="margin-left: 10px;margin-top: 10px;width: 96%;"><h3>Maroon5とは</h3><p>Maroon5は、アメリカ合衆国カリフォルニア州ロサンゼルスで結成されたバンドです。世界中の人に愛され、「世界で最も売れたアーティスト集団」と呼ばれるようになりました。代表曲は、Sugarです。</p></div><br><br><br></div>';
+
+        searchWordArtist({term: 'Maroon5',limit: 7});
+    }if (clicked_id == '00005') {
+        document.getElementById("artist-inner").innerHTML = '<div style="width: 100%;height: 390px;"><img src="https://2xmlabs.com/wp-content/uploads/2018/03/5hbCvODm_400x400.jpg" style="width: 100%;height: 390px;"><h1 style="color: white;text-align: center;margin-top: -150px;font-size: 40px;font-family:"MS Pゴシック",sans-serif;">星野源</h1><p style="text-align: center;"><input type="button" style="margin-top: -10px;" title="search" value="フォロー" id="library-btn"></p></div><div style="margin-top: 40px;"><h3 style="margin-left: 10px;">人気曲</h3><div style="margin-left: 10px;margin-top: -25px;" id="result1-artist"></div><div style="margin-left: 10px;margin-top: 10px;width: 96%;"><h3>星野源とは</h3><p>星野源は、日本のシンガーソングライターです。「SUN」や、「アイデア」は、広い世代に好まれました。代表曲は、恋です。</p></div><br><br><br></div>';
+
+        searchWordArtist({term: '星野源',limit: 7});
     }
+}
+
+var searchWordArtist = function getInfo(options) {
+    var params = {
+        lang: 'ja_jp',
+        entry: 'music',
+        media: 'music',
+        country: 'JP',
+    };
+        
+    if (options && options.term) {
+        params.term = options.term;
+    }
+        
+    if (options && options.limit) {
+        params.limit = options.limit;
+    }
+          
+    $.ajax({
+        url: 'https://itunes.apple.com/search',
+        method: 'GET',
+        data: params,
+        dataType: 'jsonp',
+            
+        success: function(json) {
+            showDataArtist(json);
+        }
+    });
+};
+
+function showDataArtist(json) {
+
+    if (json.results.length != 0) {
+        var result1Artist = document.getElementById("result1-artist");
+        html = '<br>'
+                
+        for (var i = 0, len = json.results.length; i < len; i++) {
+            var resultWord = json.results[i];
+        
+            html += '<div style="width: 96%;height: 80px;margin-top: 10px;" id=' + resultWord.trackId + ' onclick="view(this.id)">';
+            html += '<img style="width: 80px;height: 80px;" src="' + resultWord.artworkUrl100 + '"><br>';
+            html += '<div style="margin-left: 110px;margin-top: -100px;"><h4 class="track-title" style="font-weight: 90;">' + resultWord.trackName + '</h4>';
+            html += '<h4 style="color: rgb(105, 105, 105);margin-top: -15px;font-weight: 90;" class="track-title">' + resultWord.artistName + '</h4>';
+            html += '</div></div>';
+        }
+        html += '<br><br><br>';
+    }
+    result1Artist.innerHTML = html;
 }
 
 document.onkeypress = enter;
@@ -376,7 +442,7 @@ function looks(json) {
             var regExp = new RegExp( targetStr, "g" ) ;
             var img = sourceStr.replace( regExp , "450x450bb.jpg" );
 
-            html += '<i class="fas fa-arrow-left" style="margin: 10px;color: white;font-size: 20px;float: left;" onclick="past_result()"></i><i class="fas fa-ellipsis-h" style="margin-left: 305px;margin-top: 10px;color: white;font-size: 20px;float: left;" id="' + result.trackId + '" onclick="preview_video(this.id)"></i><br><br>';
+            html += '<i class="fas fa-arrow-left" style="margin: 10px;color: white;font-size: 20px;float: left;" onclick="past_result()"></i><i class="fas fa-ellipsis-h" style="margin-left: 305px;margin-top: 10px;color: white;font-size: 20px;float: left;" id="' + result.trackId + '" onclick="preview_song(this.id)"></i><br><br>';
             html += '<p style="text-align: center;"><img src="' + img + '" style="width: 320px;height: 320px;box-shadow: 2px 2px 10px black;"></p>';
             html += '<div style="width: 100%;"><h2 style="color: white;text-align: center;" id="title1">' + result.trackName + '</h2><h3 id="title1" style="color: rgb(105, 105, 105);text-align: center;margin-top: -15px;">' + result.artistName + '</h3>';
             html += '<div style="text-align: center;margin-top: 5px;"><div class="seek"><div class="fill"></div></div><div class="time">00:00 <span>/</span> 00:00</div>';
