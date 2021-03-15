@@ -44,6 +44,23 @@ document.getElementById("lyric").style.display = "none";
 document.getElementById("result2").style.display = "none";
 document.getElementById("result1").style.display = "none";
 document.getElementById("artist-look").style.display = "none";
+document.getElementById("setting").style.display = "none";
+
+function setting() {
+    document.getElementById("home").style.display = "none";
+    document.getElementById("search").style.display = "none";
+    document.getElementById("library").style.display = "none";
+    document.getElementById("premium").style.display = "none";
+    document.getElementById("question").style.display = "none";
+    document.getElementById("result").style.display = "none";
+    document.getElementById("look").style.display = "none";
+    document.getElementById("related").style.display = "none";
+    document.getElementById("lyric").style.display = "none";
+    document.getElementById("result2").style.display = "none";
+    document.getElementById("result1").style.display = "none";
+    document.getElementById("artist-look").style.display = "none";
+    document.getElementById("setting").style.display = "block";
+}
 
 function home() {
     document.getElementById("home").style.display = "block";
@@ -58,6 +75,7 @@ function home() {
     document.getElementById("result2").style.display = "none";
     document.getElementById("result1").style.display = "none";
     document.getElementById("artist-look").style.display = "none";
+    document.getElementById("setting").style.display = "none";
 }
 function search() {
     document.getElementById("home").style.display = "none";
@@ -72,6 +90,7 @@ function search() {
     document.getElementById("result2").style.display = "none";
     document.getElementById("result1").style.display = "none";
     document.getElementById("artist-look").style.display = "none";
+    document.getElementById("setting").style.display = "none";
 
     var target2 = document.getElementById("searchFocus2");
     target2.value = "";
@@ -89,6 +108,7 @@ function library() {
     document.getElementById("result2").style.display = "none";
     document.getElementById("result1").style.display = "none";
     document.getElementById("artist-look").style.display = "none";
+    document.getElementById("setting").style.display = "none";
 }
 function premium() {
     document.getElementById("home").style.display = "none";
@@ -103,6 +123,7 @@ function premium() {
     document.getElementById("result2").style.display = "none";
     document.getElementById("result1").style.display = "none";
     document.getElementById("artist-look").style.display = "none";
+    document.getElementById("setting").style.display = "none";
 }
 function artistLook(clicked_id) {
     document.getElementById("home").style.display = "none";
@@ -117,6 +138,7 @@ function artistLook(clicked_id) {
     document.getElementById("result2").style.display = "none";
     document.getElementById("result1").style.display = "none";
     document.getElementById("artist-look").style.display = "block";
+    document.getElementById("setting").style.display = "none";
     document.getElementById("artist-look").innerHTML = '<i onclick="home()" class="fas fa-arrow-left" title="戻る" style="position: absolute;left: 10px;top: 10px;font-size: 20px;color: #419be0"></i><div id="artist-inner"></div>';
 
     if (clicked_id == '00001') {
@@ -297,6 +319,7 @@ var searchWord = function getInfo(options) {
             document.getElementById("result2").style.display = "none";
             document.getElementById("result1").style.display = "block";
             document.getElementById("artist-look").style.display = "none";
+            document.getElementById("setting").style.display = "none";
             document.getElementById("result1").innerHTML = '<i onclick="home()" class="fas fa-arrow-left" title="戻る" style="margin-left: 10px;margin-top: 10px;float: left;font-size: 20px;color: white;"></i><p style="margin-left: 10px;margin-top: 20px;">インターネット接続がありません。</p>';
         }
     });
@@ -315,6 +338,7 @@ function past_result() {
     document.getElementById("result2").style.display = "none";
     document.getElementById("result1").style.display = "block";
     document.getElementById("artist-look").style.display = "none";
+    document.getElementById("setting").style.display = "none";
 }
         
 function showData(json) {
@@ -330,6 +354,7 @@ function showData(json) {
     document.getElementById("result1").style.display = "block";
     document.getElementById("result2").style.display = "none";
     document.getElementById("artist-look").style.display = "none";
+    document.getElementById("setting").style.display = "none";
 
     if (json.results.length != 0) {
         var result1 = document.getElementById("result1");
@@ -364,6 +389,7 @@ function videoLook() {
     document.getElementById("result1").style.display = "none";
     document.getElementById("result2").style.display = "block";
     document.getElementById("artist-look").style.display = "none";
+    document.getElementById("setting").style.display = "none";
 }
 
 function songLook() {
@@ -379,6 +405,7 @@ function songLook() {
     document.getElementById("result2").style.display = "none";
     document.getElementById("result1").style.display = "block";
     document.getElementById("artist-look").style.display = "none";
+    document.getElementById("setting").style.display = "none";
 }
 
 function view(clicked_id) {
@@ -394,6 +421,7 @@ function view(clicked_id) {
     document.getElementById("result1").style.display = "none";
     document.getElementById("result2").style.display = "none";
     document.getElementById("artist-look").style.display = "none";
+    document.getElementById("setting").style.display = "none";
 
     var view_song = 'https://itunes.apple.com/lookup?id=' + clicked_id;
     var parts = {
@@ -425,6 +453,7 @@ function view(clicked_id) {
             document.getElementById("result2").style.display = "none";
             document.getElementById("result1").style.display = "none";
             document.getElementById("artist-look").style.display = "none";
+            document.getElementById("setting").style.display = "none";
             document.getElementById("look").innerHTML = '<i onclick="past_result()" class="fas fa-arrow-left" title="戻る" style="margin-left: 10px;margin-top: 10px;float: left;font-size: 20px;color: white;"></i><p style="color: white;margin-left: 10px;margin-top: 10px;">インターネット接続がありません。</p>';
         }
     });
@@ -473,6 +502,7 @@ function viewVideo(clicked_id) {
     document.getElementById("result1").style.display = "none";
     document.getElementById("result2").style.display = "none";
     document.getElementById("artist-look").style.display = "none";
+    document.getElementById("setting").style.display = "none";
 
     $.get(
         "https://www.googleapis.com/youtube/v3/videos?id=" +clicked_id + "&key=AIzaSyCNB-vTMEKDJx7JOIPh2LkgP3wQOEQVLg0&part=snippet,contentDetails,statistics,status",{
@@ -515,6 +545,7 @@ function btn1Video(clicked_id) {
     document.getElementById("result2").style.display = "none";
     document.getElementById("result1").style.display = "none";
     document.getElementById("artist-look").style.display = "none";
+    document.getElementById("setting").style.display = "none";
 
     $('#related').html('');
 
@@ -561,6 +592,7 @@ function btn2Video(clicked_id) {
     document.getElementById("result2").style.display = "none";
     document.getElementById("result1").style.display = "none";
     document.getElementById("artist-look").style.display = "none";
+    document.getElementById("setting").style.display = "none";
 
     $.get(
         "https://www.googleapis.com/youtube/v3/videos?id=" +clicked_id + "&key=AIzaSyCNB-vTMEKDJx7JOIPh2LkgP3wQOEQVLg0&part=snippet,contentDetails,statistics,status",{
@@ -723,6 +755,7 @@ function btn1(clicked_id) {
     document.getElementById("result2").style.display = "none";
     document.getElementById("result1").style.display = "none";
     document.getElementById("artist-look").style.display = "none";
+    document.getElementById("setting").style.display = "none";
 
     search_related({term: clicked_id,limit: 20});
 }
@@ -768,6 +801,7 @@ function past_look() {
     document.getElementById("result2").style.display = "none";
     document.getElementById("result1").style.display = "none";
     document.getElementById("artist-look").style.display = "none";
+    document.getElementById("setting").style.display = "none";
 }
 
 function shows_related(json) {
@@ -802,6 +836,7 @@ function btn2(clicked_id) {
     document.getElementById("result2").style.display = "none";
     document.getElementById("result1").style.display = "none";
     document.getElementById("artist-look").style.display = "none";
+    document.getElementById("setting").style.display = "none";
 
     var view_song = 'https://itunes.apple.com/lookup?id=' + clicked_id;
     var parts = {
