@@ -30,6 +30,9 @@ $("#search-btn").click(function() {
     searchForm.id = "searchFocus" ;
     var searchBtn = document.getElementById("search-btn") ;
     searchBtn.id = "searchFocus1" ;
+    var audioSet = document.getElementById("audio-set");
+    audioSet.id = "audio-set0";
+    document.getElementById("audio-set0").innerHTML = '<p style="color: rgb(105, 105, 105);margin-left: 25px;margin-top: 18px;">音楽が流れていません。</p>'
 });
 
 document.getElementById("home").style.display = "block";
@@ -408,6 +411,22 @@ function songLook() {
     document.getElementById("setting").style.display = "none";
 }
 
+function looksAudio() {
+    document.getElementById("home").style.display = "none";
+    document.getElementById("search").style.display = "none";
+    document.getElementById("library").style.display = "none";
+    document.getElementById("premium").style.display = "none";
+    document.getElementById("question").style.display = "none";
+    document.getElementById("result").style.display = "none";
+    document.getElementById("look").style.display = "block";
+    document.getElementById("related").style.display = "none";
+    document.getElementById("lyric").style.display = "none";
+    document.getElementById("result1").style.display = "none";
+    document.getElementById("result2").style.display = "none";
+    document.getElementById("artist-look").style.display = "none";
+    document.getElementById("setting").style.display = "none";
+}
+
 function view(clicked_id) {
     document.getElementById("home").style.display = "none";
     document.getElementById("search").style.display = "none";
@@ -475,7 +494,7 @@ function looks(json) {
             html += '<p style="text-align: center;"><img src="' + img + '" style="width: 320px;height: 320px;box-shadow: 2px 2px 10px black;"></p>';
             html += '<div style="width: 100%;"><h2 style="color: white;text-align: center;" id="title1">' + result.trackName + '</h2><h3 id="title1" style="color: rgb(105, 105, 105);text-align: center;margin-top: -15px;">' + result.artistName + '</h3>';
             html += '<div style="text-align: center;margin-top: 5px;"><div class="seek"><div class="fill"></div></div><div class="time">00:00 <span>/</span> 00:00</div>';
-            html += '<div id="repeat-btns" style="margin-top: -5px;"><p style="text-align: center;"><span id="' + result.artistName + '" onclick="btn1(this.id)"><i class="fas fa-tv" style="margin:15px;font-size: 20px;"></i></span><span id="' + result.trackId + '" onclick="btn2(this.id)"><i style="margin:15px;font-size: 20px;" class="fas fa-microphone-alt"></i></span><span><button class="play-pause" id="play-pause" onclick="play()" style="margin: 15px"><i class="fa fa-play"></i></button></span><span onclick="btn3()"><i class="fas fa-star" style="margin: 15px;font-size: 20px;"></i></span><span id="' + result.trackViewUrl + '" onclick="btn4(this.id)"><i style="margin: 15px;font-size: 20px;" class="fas fa-download"></i></span></p></div>';
+            html += '<div id="repeat-btns" style="margin-top: -5px;"><p style="text-align: center;"><span id="' + result.artistName + '" onclick="btn1(this.id)"><i class="fas fa-tv" style="margin:15px;font-size: 20px;"></i></span><span id="' + result.trackId + '" onclick="btn2(this.id)"><i style="margin:15px;font-size: 20px;" class="fas fa-microphone-alt"></i></span><span><button class="play-pause" id="' + result.trackId + '" onclick="play(this.id)" style="margin: 15px"><i class="fa fa-play"></i></button></span><span onclick="btn3()"><i class="fas fa-star" style="margin: 15px;font-size: 20px;"></i></span><span id="' + result.trackViewUrl + '" onclick="btn4(this.id)"><i style="margin: 15px;font-size: 20px;" class="fas fa-download"></i></span></p></div>';
             html += '<br><br><br></div>';
             html += '<audio src="' + result.previewUrl + '" id="audio" style="display: none;"></audio>';
         }
@@ -700,18 +719,27 @@ function not_preview_song() {
     $("#preview-box").fadeOut("fast"); 
 }
 
-function play() {
+$(".play-pause").click(function () {
+        console.log(clicked_id)
+        audioSetting(clicked_id);
+})
+
+function play(clicked_id) {
     const audio = document.getElementById("audio");
-    const playPause  = document.getElementById("play-pause");
+    const playPause  = document.querySelector(".play-pause");
     let fillbar = document.querySelector(".fill");
     let currentTime = document.querySelector(".time");
 
     if (! audio.paused ) {
         playPause.innerHTML = '<i class="fas fa-play"></i>';
+        //play0.innerHTML = '<i class="fas fa-play"></i>'
         audio.pause();
     } else {
         playPause.innerHTML = '<i class="fas fa-pause"></i>';
+        //play0.innerHTML = '<i class="fas fa-pause"></i>';
         audio.play();
+        console.log(clicked_id);
+        audioSetting(clicked_id);
     }
     audio.addEventListener("timeupdate", function() {
         let position = audio.currentTime / audio.duration;
@@ -740,6 +768,48 @@ function play() {
         audio.currentTime = 0;
         playPause.innerHTML = '<i class="fas fa-play"></i>';
     });
+}
+
+function audioSetting(clicked_id) {
+
+    var view_song = 'https://itunes.apple.com/lookup?id=' + clicked_id;
+    var parts = {
+        lang: 'ja_jp',
+        entry: 'music',
+        media: 'music',
+        country: 'JP',
+    };
+
+    $.ajax({
+        url: view_song,
+        method: 'GET',
+        data: parts,
+        dataType: 'jsonp',
+                
+        success: function(json) {
+            audioSetting0(json);
+        }
+    });
+}
+
+function audioSetting0(json) {
+    if (json.results.length != 0) {
+        html  = '<div>';
+              
+        for (var i = 0, len = json.results.length; i < len; i++) {
+            var result = json.results[i];
+            var audioSet0 = document.getElementById("audio-set0"); 
+            var sourceStr = result.artworkUrl100;
+            var targetStr = "100x100bb.jpg";
+            var regExp = new RegExp( targetStr, "g" ) ;
+            var img = sourceStr.replace( regExp , "100x100bb.jpg" );
+
+            html += '<img src="' + img + '" style="width: 50px;hright: 50px;margin-top: 5px;margin-left: 25px;float: left;">';
+            html += '<div style="float: left;margin-left: 15px;margin-top: -10px;"><p>' + result.trackName + '</p><p style="margin-top: -12px;color: rgb(105, 105, 105);;">' + result.artistName + '</p></div><button class="play-pause" onclick="looksAudio()" style="float: left;margin-left: 110px;margin-top: 10px;"><i class="fa fa-play"></i></button>'
+        }
+        html += '</div>';
+    }
+    audioSet0.innerHTML = html;
 }
 
 function btn1(clicked_id) {
